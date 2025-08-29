@@ -3,9 +3,11 @@ const router = express.Router();
 
 const { createRegister, login } = require('../controllers/auth')
 
-/* localhost:8000/api/register */
+// @route POST localhost:8000/api/register
+// @desc route register
+// @access Public
+router.post('/register',createRegister);
 
-router.get('/register',createRegister);
 
 /* localhost:8000/api/login */
 router.get('/login', login);
