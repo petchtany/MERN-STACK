@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 
+//Import Routes
+const authRoutes = require('./routes/auth');
+
 // app
 const app = express();
 
@@ -28,9 +31,7 @@ app.use(cors());
 
 
 //route
-app.get('/api',(req,res) =>{
-    res.send('hello World')
-})
+app.use('/api',authRoutes);
 
 
 
