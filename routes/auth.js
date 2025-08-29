@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+const { createRegister, login } = require('../controllers/auth')
 
 /* localhost:8000/api/register */
 
-router.get('/register',(req,res) =>{
-    res.send('Hello Register')
-});
+router.get('/register',createRegister);
 
-/* localhost:8000/api/test */
-router.get('/test',(req,res) =>{
-    res.send('Hello Test')
-});
+/* localhost:8000/api/login */
+router.get('/login', login);
+
 
 module.exports = router;
